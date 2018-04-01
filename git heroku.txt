@@ -1,0 +1,28 @@
+*** Git process beginning to end:
+    git init
+    git config user.name "pincha63"
+    git config user.email "pinchocrates@onconsultants.com"
+    git add .
+// then for each commit    
+	git commit -m "c901 my commit comment here"
+//only "double" work for Windows here, while book has 'single'
+
+*** Deploy to Heroku
+// make sure all configs are in
+// Make sure we have bundler, pg, thin
+// Create Gemfile ad then...
+   bundle install --without production
+// ... which creates Gemfile.lock
+// Create config.ru which includes just this:
+   require './main'
+   run Sinatra::Application
+// Commit in git all changes
+   heroku create appname
+   git push heroku master
+// optionally...
+   heroku open
+   heroku logs   
+// Go into heroku now to init the classes
+   heroku run console
+   require './main'
+   DataMapper.auto_migrate!

@@ -1,0 +1,4 @@
+h1 Edit Card
+form method="POST" action="/cards/#{@card.kid}"
+  input type="hidden" name="_method" value="PUT"
+  == slim :card_form

@@ -1,0 +1,114 @@
+$red: #903;
+$black: #444;
+$white: #fff;
+$offwhite: #e9e9e9;
+$main-font: Helvetica, Arial, sans-serif;
+$nav-padding-left: 29px;
+$nav-padding-right: 6px;
+
+body {
+  font-family: $main-font;
+}
+
+h1 {
+  color: $red;
+  font: 32px/1 $main-font;
+}
+
+h2 {
+  color: darken($red,4%);
+  font: 24px/1 $main-font;
+}
+
+header h1 {
+  font-size: 40px;
+  line-height: 80px;
+  background: transparent url(/images/newlogo.png) 0 0 no-repeat;
+  padding-left: 84px;
+}
+
+@mixin tabs ($background: blue, $color: yellow) {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: $background;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+  }
+  li.rite {
+    float: right;
+	padding-left: $nav-padding-left;
+	padding-right: $nav-padding-right;
+  }
+  
+  a {
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    background: $background;
+    color: $color;
+    &:hover {
+      background: darken($background, 20%);
+    }
+  }
+
+  li.tagel {
+	font-size: 10px;
+	background: darken($background, 12%);
+	border: 1px solid darken($background, 77%);
+	border-radius: 4px;
+	min-height: 16px;
+	margin: 11px 4px 18px 4px;
+	padding: 4px;
+  }
+
+  li.notselected {
+	color: lighten($color, 15%);
+	background: darken($background, 2%);
+  }  
+  
+}
+
+.taglist {
+  @include tabs ($background: #ffffff, $color: #223232);
+}
+
+nav {
+  @include tabs ($background: $black, $color: $white);
+  font-weight: bold;
+}
+
+nav a.current {
+  background: lighten($black, 15%);
+}
+
+.floatleft {
+    float:left;
+    width:30.4%;
+}
+
+.floatright {
+    float:right;
+    width:66.3%;
+    height: 77vh;
+    background: $offwhite;
+}
+
+.nofloat {
+    clear:both;
+    padding:0.77%;
+    min-height:39px;
+}
+
+p {
+  font: 13px/1.4 $main-font;
+}
+
+.smalltext {
+    font-size: 55%;
+}
+
+label { display: block; }

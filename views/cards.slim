@@ -1,0 +1,11 @@
+h1 Existing Cards
+a href="/cards/new" Create a new card
+- if @cards.any?
+  ul#cards
+    -@cards.sort_by{|x| x[:kid]}.each do |myCard|
+      li <a href="/cards/#{myCard[:kid]}">#{myCard[:kid]}&nbsp;&nbsp;#{myCard[:kname]}&nbsp;:&nbsp;#{myCard[:kcontents]}</a>
+- else
+  p No cards have been created yet!
+  
+form action="/"
+  input id="GoHome" type="submit" value="Back to home page"

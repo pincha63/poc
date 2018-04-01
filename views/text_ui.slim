@@ -1,0 +1,25 @@
+doctype html
+html lang="en" 
+  head
+    meta charset="UTF-8" /
+    title Text User Interface
+  body
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" 
+    <!-- script src = "myJS.js"   -->
+    h1 Sinatra drag and drop
+
+    section
+      #leftside.floatleft
+        h2 The thing is
+        p here comes the right side with all the forms and the Ajaxex
+        form action="/cards" 
+          input id="cards" type="submit" value="See all cards"
+        p
+        form action="/"
+          input id="card_edit" type="submit" value="Back to home page"
+
+      #rightside.floatright
+        #forms
+          p Hi man
+      #footer.nofloat
+        p.smalltext footer goes here&nbsp;

@@ -1,0 +1,38 @@
+doctype html
+html lang="en" 
+  head
+    meta charset="UTF-8" /
+    title Sinatra drag and drop
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel=("stylesheet prefetch") /
+    link href="style.css?v=2" rel="stylesheet" /
+  body
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" 
+    h1 Sinatra drag and drop
+    .adder
+      input.input placeholder=("Add items to list") type="text" /
+      span.add +
+    #colhead
+      div
+        h3 Left Board
+        h3 Centre Board
+        h3 Right Board
+    #nh
+      ul
+        li.draggable draggable="true" A1
+        li.draggable draggable="true" A2
+        li.draggable draggable="true" A3
+    #ni
+      ul
+        li.draggable draggable="true" B1
+        li.draggable draggable="true" B2
+        li.draggable draggable="true" B3
+    #nj
+      ul
+        li.draggable draggable="true" C1
+        li.draggable draggable="true" C2
+        li.draggable draggable="true" C3
+        li.draggable draggable="true" C4
+        li.draggable draggable="true" C5
+    #footer
+      | Empty until loaded...
+    script src="newindex.js" 

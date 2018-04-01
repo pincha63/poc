@@ -1,0 +1,38 @@
+h2= "My card name is #{@card[:kname]} and the contents thereof are #{@card[:kcontents]}"
+#leftside.floatleft
+  p
+    | Left Side
+#rightside.floatright
+  p == "Card IDs is: #{@card[:kid]}"
+  p == "Parent board ID is: #{@card[:bid]}"
+  p == "Card name is: #{@card[:kname]}"
+  p == "Content is: #{@card[:kcontents]}"
+  p == "Sequence is: #{@card[:kseq]}"
+  p == "Status is: #{@card[:kstatus]}"
+  p == "Created timestamp is: #{@card[:kcreatedTS]}"
+  p == "Modified timestamp is: #{@card[:kmodifiedTS]}"
+  form action="/"
+    input id="GoHome" type="submit" value="Back to home page"
+  p
+  form action="/cards"
+    input id="ShowAllCards" type="submit" value="Back to all cards"
+    
+  p
+    label for="name" Name:
+    input#Name type="text" name="card[kname]" value="#{@card[:kname]}"
+    label for="content" Content:
+    input#Content type="text" name="card[kcontent]" value="#{@card[:kcontents]}"
+    label for="board" Board:
+    input#Board type="number" name="card[bid]" value="#{@card[:bid]}"
+
+    p
+    form method="GET" action="/cards/#{@card[:kid]}/edit"
+      input type="submit" value="Edit Card"
+
+    p
+    form action="/card/#{@card[:kid]}" method="POST"
+      input type="hidden" name="_method" value="DELETE"
+      input type="submit" value="Delete Card"
+
+#footer.nofloat
+    p.smalltext $&nbsp;
